@@ -2,7 +2,7 @@
 
 var config = {
 
-  databaseURL: "https://chatroom-1ca4f.firebaseio.com"
+    databaseURL: "https://chattingroom-f012c.firebaseio.com",
 
 };
 firebase.initializeApp(config);
