@@ -20,6 +20,8 @@ function send(){
   });
 
 document.getElementById("msg1").value="";
+
+
 }
 
 
@@ -32,5 +34,7 @@ document.getElementById("msg1").value="";
 
     room.innerHTML=room.innerHTML+"<p>"+lat+" 說: "+lng+"</p>";
 
+    var objDiv = document.getElementById("Msg");
+    objDiv.scrollTop = objDiv.scrollHeight;
 
   });
