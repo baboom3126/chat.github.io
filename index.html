@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>開啟中</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="./js/jquery.js"></script>
+
+  <script src="./js/firebase.js"></script>
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/materialize.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/materialize.css" rel="stylesheet">
+
+<style media="screen">
+  #main_div{
+
+    padding-top: 230px;
+  }
+  html,body{
+    height: 100%;
+    font-family:微軟正黑體;
+  }
+</style>
+  </head>
+
+
+  <body>
+
+    <div class="center container" id="main_div">
+      <h5>開啟中</h5>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="progress ">
+    <div class="determinate" id="progressBar"></div>
+</div>
+
+    </div>
+
+    <meta content='1; url=./chatroom.html' http-equiv='refresh'>
+
+  </body>
+
+  <script type="text/javascript">
+  var i;
+  function progress(){
+    for(i = 0; i <330; i++){
+    document.getElementById("progressBar").style.width=i+"px";
+    }}
+    progress();
+  </script>
+</html>

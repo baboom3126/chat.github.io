@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>首頁</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="./js/jquery.js"></script>
+
+  <script src="./js/firebase.js"></script>
+  <script src="./js/bootstrap.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/materialize.css" rel="stylesheet">
+  <script src="./js/materialize.js"></script>
+
+
+  <script src="./js/main.js"></script>
+
+<script type="text/javascript">
+$( document ).ready(function(){
+
+  $(".button-collapse").sideNav();
+
+})
+</script>
+
+<style media="screen">
+html,body{
+  height: 100%;
+  font-family:微軟正黑體;
+}
+#main_div {
+padding-top: 5px;
+}
+a:hover{
+  text-decoration: none;
+
+}
+
+#Msg{
+  overflow-y: auto;
+  height:75vh;
+}
+
+#div_form{
+  position: absolute;
+  bottom: 0;
+}
+
+</style>
+
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo center">聊天室</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./sound.html">SOUND</a></li>
+          <li><a href="#">註冊</a></li>
+          <li><a href="#">登入</a></li>
+        </ul>
+        <ul class="side-nav " id="mobile-demo">
+          <hr>
+          <li class="center">
+            <input type="text" id="name1" value="" placeholder="名字" style="text-align:center; width:60%; color:black;" autocomplete="off">
+          </li>
+          <li><a href="#">註冊</a></li>
+          <li><a href="#">登入</a></li>
+          <hr>
+
+          <li><a href="./sound.html">SOUND</a></li>
+          <hr>
+        </ul>
+      </div>
+    </nav>
+
+<div class="row card" id="main_div">
+
+  <div class="co s12" >
+    <div class=" " >
+      <div class="card-content" id="Msg">
+        <p style="font-weight:bold;">歡迎來到聊天室</p>
+<hr>
+<div class="chat_msg" id="room">
+<p>1</p>
+</div>
+
+
+      </div>
+
+    </div>
+  </div></div>
+
+<div class="row ">
+
+  <div class="col s12" id="div_form">
+    <div class="card-action  " style="padding:5px;">
+      <form class="" action="javascript:send()" method="post">
+        <!-- <input type="hidden" id="name1" name="" value="" autocomplete="off" placeholder="名字" style="text-align:center;"> -->
+
+          <input type="text" id="msg1" name="" value="" autocomplete="off" placeholder="訊息" style="text-align:center; width:60%" value="">
+        <input type="submit" name="" class="btn right" value="送出" >
+      </form>
+    </div>
+</div>
+</div>
+
+
+
+
+  </body>
+</html>

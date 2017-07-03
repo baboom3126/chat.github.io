@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title data-translation="title">Webduino Blockly - 蜂鳴器播放音樂</title>
+  <script src="./js/jquery.js"></script>
+  <script src="https://webduino.io/components/webduino-js/dist/webduino-all.min.js"></script>
+  <script src="https://blockly.webduino.io/webduino-blockly.js"></script>
+  <script src="https://blockly.webduino.io/lib/runtime.min.js"></script>
+  <link href="css/materialize.css" rel="stylesheet">
+  <script src="./js/materialize.js"></script>
+  <script type="text/javascript">
+  var buzzer;
+var music;
+
+function buzzer_music(m) {
+var musicNotes = {};
+musicNotes.notes = [];
+musicNotes.tempos = [];
+if (m[0].notes.length > 1) {
+  for (var i = 0; i < m.length; i++) {
+    if (Array.isArray(m[i].notes)) {
+      var cn = musicNotes.notes.concat(m[i].notes);
+      musicNotes.notes = cn;
+    } else {
+      musicNotes.notes.push(m[i].notes);
+    }
+    if (Array.isArray(m[i].tempos)) {
+      var ct = musicNotes.tempos.concat(m[i].tempos);
+      musicNotes.tempos = ct;
+    } else {
+      musicNotes.tempos.push(m[i].tempos);
+    }
+  }
+} else {
+  musicNotes.notes = [m[0].notes];
+  musicNotes.tempos = [m[0].tempos];
+}
+return musicNotes;
+}
+
+function init(){
+boardReady({device: 'waOZ'}, function (board) {
+board.systemReset();
+board.samplingInterval = 20;
+buzzer = getBuzzer(board, 11);
+// music = buzzer_music([  {notes:"C5",tempos:"2"},{notes:"D5",tempos:"2"},{notes:"E5",tempos:"2"},{notes:"F5",tempos:"2"},{notes:"G5",tempos:"2"},{notes:"A5",tempos:"2"},{notes:"B5",tempos:"2"},{notes:"C6",tempos:"2"}]);
+buzzer.play(music.notes, music.tempos);
+document.getElementById("buzzerNotes").innerHTML = music.notes;
+document.getElementById("buzzerTempos").innerHTML = music.tempos;
+});
+}
+
+function btn1(){
+  music = buzzer_music([ {notes:"C5",tempos:"3"},]);
+  init();
+}
+
+function btn2(){
+  music = buzzer_music([ {notes:"D5",tempos:"3"},]);
+  init();
+}
+function btn3(){
+  music = buzzer_music([ {notes:"E5",tempos:"3"},]);
+  init();
+}
+function btn4(){
+  music = buzzer_music([ {notes:"F5",tempos:"3"},]);
+  init();
+}
+function btn5(){
+  music = buzzer_music([ {notes:"G5",tempos:"3"},]);
+  init();
+}
+function btn6(){
+  music = buzzer_music([ {notes:"A5",tempos:"3"},]);
+  init();
+}
+function btn7(){
+  music = buzzer_music([ {notes:"B5",tempos:"3"},]);
+  init();
+}
+function btn8(){
+  music = buzzer_music([ {notes:"C6",tempos:"3"},]);
+  init();
+}
+
+  </script>
+
+  <style media="screen">
+    html,body{
+      display: block;
+      width: 100%;
+    }
+    .a1{
+      display: block;
+      width: 100%;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      background-color: grey;
+      text-align: center;
+    }
+    .a2{
+      display: block;
+      width: 100%;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      background-color: black;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#" class="a1" onclick="javascript:btn1()">C</a>
+  <a href="#" class="a2" onclick="javascript:btn2()">D</a>
+  <a href="#" class="a1" onclick="javascript:btn3()">E</a>
+  <a href="#" class="a2" onclick="javascript:btn4()">F</a>
+  <a href="#" class="a1" onclick="javascript:btn5()">G</a>
+  <a href="#" class="a2" onclick="javascript:btn6()">A</a>
+  <a href="#" class="a1" onclick="javascript:btn7()">B</a>
+  <a href="#" class="a2" onclick="javascript:btn8()">C</a>
+
+  <div id="show">
+<span>音符：</span><span id="buzzerNotes"></span>
+<span>節奏：</span><span id="buzzerTempos"></span>
+
+  </div>
+</body>
