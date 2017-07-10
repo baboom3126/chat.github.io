@@ -19,7 +19,7 @@ function send(){
   var msg=document.getElementById("msg1").value;
   var room = document.getElementById("room");
   // room.innerHTML=room.innerHTML+"<p>"+name+"說："+msg+"</p>";
-
+if(msg!=""){
   firebase.database().ref('User00002').set({
   name : name,
   msg : msg,
@@ -38,7 +38,7 @@ room.appendChild(my_div);
 document.getElementById("msg1").value="";
 
 count++;
-
+}
 }
 var x = 0;
 
