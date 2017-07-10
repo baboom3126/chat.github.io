@@ -32,7 +32,7 @@ $( document ).ready(function(){
 <style media="screen">
 html,body{
   height: 100%;
-  font-family:微軟正黑體;
+  font-family:微軟正黑體,Arial;
 }
 #main_div {
 padding-top: 5px;
@@ -62,9 +62,11 @@ a:hover{
         <a href="#!" class="brand-logo center">聊天室</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="./sound.html">SOUND</a></li>
+          <li class="center">
+            <input type="text" id="name1" value="" placeholder="請輸入名字" style="text-align:center; width:100%; color:white;" autocomplete="off">
+          <!-- </li>
           <li><a href="#">註冊</a></li>
-          <li><a href="#">登入</a></li>
+          <li><a href="#">登入</a></li> -->
         </ul>
         <ul class="side-nav " id="mobile-demo">
           <hr>
@@ -89,7 +91,8 @@ a:hover{
         <p style="font-weight:bold;">歡迎來到聊天室</p>
 <hr>
 <div class="chat_msg" id="room">
-<p>1</p>
+<!-- msg here -->
+
 </div>
 
 
@@ -105,8 +108,8 @@ a:hover{
       <form class="" action="javascript:send()" method="post">
         <!-- <input type="hidden" id="name1" name="" value="" autocomplete="off" placeholder="名字" style="text-align:center;"> -->
 
-          <input type="text" id="msg1" name="" value="" autocomplete="off" placeholder="訊息" style="text-align:center; width:60%" value="">
-        <input type="submit" name="" class="btn right" value="送出" >
+          <input type="text" id="msg1" name="" value="" autocomplete="off" placeholder="訊息" style="text-align:center; width:78%" value="">
+        <input type="submit" name="" class="btn right" value="送出"  style="width:20%;">
       </form>
     </div>
 </div>
