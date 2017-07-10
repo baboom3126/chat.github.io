@@ -26,10 +26,9 @@ function send(){
   count : count
   });
 
-var my_span = document.createElement("span");
-var my_div = document.createElement("div");
-my_div.className="right";
-my_div.style="text-align:right; width:80%;";
+var my_span = document.createElement("p");
+var my_div = document.createElement("p");
+my_div.style="text-align:right;";
 my_span.innerHTML=msg+"<br>";
 my_div.appendChild(my_span);
 room.appendChild(my_div);
@@ -52,7 +51,7 @@ var x = 0;
     if(lat!=name){
     var new_p = document.createElement("p");
     new_p.style="text-align:left; ";
-    new_p.innerHTML=lat+" 說: "+lng;
+    new_p.innerHTML=lat+" 說: "+lng+"<br>";
     room.appendChild(new_p);
 
 }
@@ -63,7 +62,4 @@ objDiv.scrollTop = objDiv.scrollHeight;
   });
 
 
-
-
-/////////////////////////字太多要換行////////////////
-/////////////////不能輸出空白///////////////////////
+  /////////////////不能輸出空白///////////////////////
