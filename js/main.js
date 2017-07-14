@@ -1,5 +1,14 @@
 
-
+ function getURL() {
+     
+    
+    var url = location.href;
+    var decode = decodeURIComponent(url);
+    
+    var temp = decode.split("?");
+	var vars = temp[1].split("&");
+	return vars[0];
+	}
 // Initialize Firebase
 var count = 0;
 
@@ -15,13 +24,12 @@ firebase.initializeApp(config);
 
 
 function send(){
-  var name=document.getElementById("name1").value;
   var msg=document.getElementById("msg1").value;
   var room = document.getElementById("room");
   // room.innerHTML=room.innerHTML+"<p>"+name+"說："+msg+"</p>";
 if(msg!=""){
   firebase.database().ref('User00002').set({
-  name : name,
+  name : getURL(),
   msg : msg,
   count : count
   });
@@ -47,8 +55,7 @@ var x = 0;
 
     var lat= snapshot.val().name;
     var lng= snapshot.val().msg;
-    var name = document.getElementById("name1").value;
-    if(lat!=name){
+    if(lat!=getURL()){
     var new_p = document.createElement("p");
     new_p.style="text-align:left; ";
     new_p.innerHTML=lat+" 說: "+lng+"<br>";
