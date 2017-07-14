@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title data-translation="title">Webduino Blockly - 溫濕度傳感器</title>
+  <!-- webduino -->
+  <script src="https://webduino.io/components/webduino-js/dist/webduino-all.min.js"></script>
+  <script src="https://blockly.webduino.io/webduino-blockly.js"></script>
+  <script src="https://blockly.webduino.io/lib/runtime.min.js"></script>
+    <link href="css/materialize.css" rel="stylesheet">
+  <script src="./js/materialize.js"></script>
+  <script>
+  var dht;
+
+
+boardReady({device: 'waOZ'}, function (board) {
+  board.systemReset();
+  board.samplingInterval = 20;
+  dht = getDht(board, 11);
+  dht.read(function(evt){
+    document.getElementById("temperature").innerHTML = dht.temperature;
+    document.getElementById("humidity").innerHTML = dht.humidity;
+  }, 1000);
+});
+
+  </script>
+  <style>
+html,body{
+  height: 100%;
+  font-family:微軟正黑體,Arial;
+  width: 100%;
+}
+span{
+font-size:24px;
+}
+  </style>
+</head>
+
+<body>
+<div class="container">
+<div class="card" style="padding:40px;">
+<h2>溫溼度感測</h2>
+  <div><div id="show">
+    <span>溫度：</span>
+    <span id="temperature">0</span> ℃
+    <br>
+    <span>濕度：</span>
+    <span id="humidity">0</span> %
+  </div></div></div></div>
+</body>

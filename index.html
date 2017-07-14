@@ -11,7 +11,7 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="./js/jquery.js"></script>
-
+ 
   <script src="./js/firebase.js"></script>
   <script src="./js/bootstrap.js"></script>
   <script src="./js/materialize.js"></script>
@@ -25,9 +25,17 @@
   }
   html,body{
     height: 100%;
-    font-family:微軟正黑體;
+    font-family:微軟正黑體,Arial;
   }
 </style>
+<script>
+function main(){
+
+var name =document.getElementById("name1").value;
+
+document.location.href="./chatroom.html?"+name;
+}
+</script>
   </head>
 
 
@@ -50,18 +58,32 @@
     <div class="determinate" id="progressBar"></div>
 </div>
 
-    </div>
+    </div>	<div class="container" >
 
-    <meta content='1; url=./chatroom.html' http-equiv='refresh'>
+	<div class="container" >
+<form action="javascript:main()" method="get">
+<input type="text" autocomplete="off" placeholder="名字" id="name1">
+<input type="submit" class="btn" value="確認">
+</form>    </div></div>
+
 
   </body>
 
   <script type="text/javascript">
-  var i;
-  function progress(){
-    for(i = 0; i <330; i++){
-    document.getElementById("progressBar").style.width=i+"px";
-    }}
-    progress();
+function move() {
+  var elem = document.getElementById("progressBar");   
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width=width+2; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+move();
   </script>
 </html>
