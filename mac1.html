@@ -102,16 +102,34 @@ visibility: visible;
 window.onload = function setTimeText(){
 var url = location.href;
 var temp = url.split("?");
-var vars = temp[1].split("&");
+
+var current_sec=60;
+var current_min=1;
+console.log(temp[1]);
+
+function confirm(){
+if(temp[1]==1){
+  document.getElementById("change1").innerHTML="剩餘時間  0"+current_min+":"+current_sec;
+}
+if(temp[1]==2){
+  document.getElementById("change2").innerHTML="剩餘時間  0"+current_min+":"+current_sec;
+}
+}
 
 
-if(vars[0]==1){
-  document.getElementById("change1").innerHTML="剩餘時間  "+" 04 : 57";
+  setInterval(function(){
+    if(current_sec>0){
+current_sec--;
 }
-if(vars[0]==2){
-  document.getElementById("change2").innerHTML="剩餘時間  "+" 04 : 57";
+if(current_sec==0){
+  current_sec=60;
+  current_min=0;
 }
+    confirm();
+  },1000)
+
 }
+
 
 
 
@@ -163,7 +181,7 @@ if(vars[0]==2){
         期限: 2017 年 7 月 19 日 尚餘: 2 天 13 小時
       </div>
       <div class="" style="margin-left:15px; width:92%;">
-        <a href="./mac2.html?2" class="a2 waves-effect"><span id="change2">兌換優惠</span></a>
+        <a href="./mac2.html?1" class="a2 waves-effect"><span id="change1">兌換優惠</span></a>
       </div>
 
     </div>
