@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=0">
+
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="./js/jquery.js"></script>
+    <link href="css/materialize.css" rel="stylesheet">
+    <script src="./js/materialize.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript">
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+
+      })
+    </script>
+    <style media="screen">
+    body {
+width: 100%;
+overflow-x:hidden ;
+overflow-y: hidden;
+background-color: rgb(211, 211, 211);
+}
+.a1{
+  width: calc(100%/3);
+  display: inline-block;
+  text-align: center;
+  padding-top: 15px;
+padding-bottom: 15px;
+  background-color: rgb(242, 242, 242);
+  color: black!important;
+  font-size: 15px;
+}
+footer{
+  width: 100%;
+  bottom : 0;
+  position: relative;
+}
+.a2{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 15px;
+padding-bottom: 15px;
+  background-color: white;
+  color: black!important;
+  font-size: 22px;
+
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+.div2{
+  width: 100%;
+}
+.div_time{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: rgb(7, 12, 124);
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+#black1{
+position: absolute;
+z-index: 3;
+opacity: 0.5;
+visibility: visible;
+}
+.div_loading{
+  display: inline-block;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  z-index: 4;
+  text-align: left;
+}
+    </style>
+    <script type="text/javascript">
+
+    setTimeout(function(){
+
+      $(document).ready(function() {
+
+        $('.div_loading').hide();
+        document.getElementById("black1").style.visibility="hidden";
+        document.body.style.overflowY = "scroll";
+
+  });
+
+}, 1300);
+
+
+window.onload = function setTimeText(){
+var url = location.href;
+var temp = url.split("?");
+var vars = temp[1].split("&");
+
+
+if(vars[0]==1){
+  document.getElementById("change1").innerHTML="剩餘時間  "+" 04 : 57";
+}
+if(vars[0]==2){
+  document.getElementById("change2").innerHTML="剩餘時間  "+" 04 : 57";
+}
+}
+
+
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <img src="./img/black.jpg" alt="" id="black1" height="100%" width="100%">
+    <div class="div_loading">
+      <div class="card" style="padding:2px 13px;">
+
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        <span class="center" style="padding-left:20%;">
+      載入中 , 請稍等</span>
+    </div>
+    </div>
+
+
+    <nav>
+      <div class="nav-wrapper " style="background-color:rgb(213,13,25);">
+        <a href="./mac.html" data-activates="mobile-demo" class=""  style="float: left;position: relative;z-index: 1;height: 56px;margin: 0 10px;">
+          <img src="./img/left_arrow.png" width="25px" alt="" ></a>
+
+        <span  style="font-size:18px; ">優惠卷</span>
+
+
+        <a href="#" class="right" style="padding-right:10px; font-size:12px; color:white!important;">使用說明</a>
+      </div>
+    </nav>
+
+    <div class="card" style="margin: 5px 5px;">
+      <div class="row" style="margin-bottom:0px!important;">
+        <div class="center">
+        <img src="./img/3.png" width="90%" >
+      </div>
+      <div class=" div_time" style="margin-left:15px; width:92%;">
+        期限: 2017 年 7 月 19 日 尚餘: 2 天 13 小時
+      </div>
+      <div class="" style="margin-left:15px; width:92%;">
+        <a href="./mac2.html?2" class="a2 waves-effect"><span id="change2">兌換優惠</span></a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" style="margin: 5px 5px;">
+    <div class="row" style="margin-bottom:0px!important;">
+      <div class="center">
+      <img src="./img/4.png" width="90%" >
+    </div>
+    <div class=" div_time" style="margin-left:15px; width:92%;">
+      期限: 2017 年 7 月 19 日 尚餘: 2 天 13 小時
+    </div>
+    <div class="" style="margin-left:15px; width:92%;">
+      <a href="./mac2.html?2" class="a2 waves-effect"><span id="change2">兌換優惠</span></a>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <footer><a href="#" class="a1 waves-effect"><i class="small material-icons">add</i><br>
+      優惠卷</a><a href="#" class="a1 waves-effect"><i class="small material-icons">add</i><br>
+        歡樂貼</a><a href="#" class="a1 waves-effect"><i class="small material-icons">add</i><br>
+          獨享卷</a></footer>
+  </body>
+</html>

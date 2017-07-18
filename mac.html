@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=0">
+
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="./js/jquery.js"></script>
+    <link href="css/materialize.css" rel="stylesheet">
+    <script src="./js/materialize.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript">
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+
+      })
+    </script>
+    <style media="screen">
+    body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+width: 100%;
+overflow-x: hidden;
+overflow-y: scroll;
+}
+.a1{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 15px;
+padding-bottom: 15px;
+  background-color: rgb(242, 242, 242);
+  color: black!important;
+  font-size: 15px;
+}
+footer{
+  width: 100%;
+  bottom : 0;
+  position: absolute;
+}
+.a3{
+  background-color: rgb(213,13,25);
+  color: white!important;
+}
+.a3:hover{
+  background-color: #be0c0c!important;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper " style="background-color:rgb(213,13,25);">
+        <a href="#!" class="brand-logo"><img src="./img/mac.jpg" alt="" width="50px"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#" class="a3 waves-effect"> </a></li>
+          <li><a href="#" class="a3 waves-effect">Welcome</a></li>
+          <li><a href="#" class="a3 waves-effect">首頁</a></li>
+          <li><a href="#" class="a3 waves-effect">驚喜收藏</a></li>
+          <li><a href="#" class="a3 waves-effect">新訊通知</a></li>
+          <li><a href="#" class="a3 waves-effect">點點卡</a></li>
+          <li><a href="#" class="waves-effect">餐廳滿意度調查</a></li>
+          <li><a href="#" class="waves-effect">餐廳位置</a></li>
+          <li><a href="#" class="waves-effect">用戶小幫手</a></li>
+          <li><a href="#" class="waves-effect">設定</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <footer><a href="#" class="a1 waves-effect"><i class="small material-icons">add</i><br>
+      設定天氣</a><a href="./mac1.html" class="a1 waves-effect"><i class="small material-icons">add</i><br>優惠卷</a></footer>
+  </body>
+</html>

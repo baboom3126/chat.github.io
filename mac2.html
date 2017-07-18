@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=0">
+
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="./js/jquery.js"></script>
+    <link href="css/materialize.css" rel="stylesheet">
+    <script src="./js/materialize.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript">
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+        $('#div_alert').hide();
+
+      })
+    </script>
+    <style media="screen">
+    body {
+width: 100%;
+overflow-x:hidden ;
+overflow-y: hidden;
+
+}
+.a1{
+  width: calc(100%/3);
+  display: inline-block;
+  text-align: center;
+  padding-top: 3px;
+padding-bottom: 10px;
+  background-color: rgb(242, 242, 242);
+  color: black!important;
+  font-size: 12px;
+}
+footer{
+  width: 100%;
+  bottom : 0;
+  position: absolute;
+  text-align: center;
+
+}
+.a2{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 15px;
+padding-bottom: 15px;
+  background-color: white;
+  color: black!important;
+  font-size: 22px;
+
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+
+}
+.div2{
+  width: 100%;
+}
+.div_time{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: rgb(7, 12, 124);
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.a4{
+  margin-bottom: 1px;
+  width: 97%;
+  text-align: center;
+  background-color: #ffa000;
+  color: white;
+  display: inline-block;
+ padding: 15px 15px;
+ margin-bottom: 6px;
+font-size: 20px;
+}
+.a4:hover{
+  color: white;
+}
+.div_alert{
+display: inline-block;
+width: 80%;
+position: absolute;
+left: 10%;
+top: 40%;
+z-index: 4;
+text-align: left;
+visibility: hidden;
+
+}
+#black1{
+position: absolute;
+z-index: 3;
+opacity: 0.5;
+visibility: visible;
+}
+.div_loading{
+  display: inline-block;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  z-index: 4;
+  text-align: left;
+}
+
+
+    </style>
+    <script type="text/javascript">
+
+    setTimeout(function(){
+
+      $(document).ready(function() {
+
+        $('.div_loading').hide();
+        document.getElementById("black1").style.visibility="hidden";
+
+  });
+
+}, 1200);
+
+
+
+
+
+      function go(){
+        document.getElementById("div_alert").style.visibility="visible";
+        document.getElementById("black1").style.visibility="visible";
+
+        $(document).ready(function() {
+
+          $('#div_alert').fadeIn('100');
+    });
+      }
+
+
+      function confirm(){
+        var url = location.href;
+
+        var temp = url.split("?");
+        var vars = temp[1].split("&");
+        var count;
+        if(vars[0]=="2#")
+        {
+          count="2";
+        }
+        if(vars[0]=="1#")
+        {
+          count="1";
+        }
+        setTimeout(function(){
+          window.location.href="./mac1.html?"+count;
+
+        }, 600);
+      }
+
+
+      function cancel(){
+        $(document).ready(function() {
+
+          $('#div_alert').fadeOut('100');
+    });
+    document.getElementById("black1").style.visibility="hidden";
+
+
+      }
+    </script>
+    <script type="text/javascript">
+
+
+    </script>
+  </head>
+  <body>
+    <img src="./img/black.jpg" alt="" id="black1" width="100%" height="100%" >
+    <nav id="nav1">
+      <div class="nav-wrapper " style="background-color:rgb(213,13,25);">
+        <a href="./mac1.html" data-activates="mobile-demo" class=""  style="float: left;position: relative;z-index: 1;height: 56px;margin: 0 10px;">
+          <img src="./img/left_arrow.png" width="25px" alt="" ></a>
+
+        <span  style="font-size:18px; ">優惠卷</span>
+
+
+        <a href="#" class="right" style="padding-right:10px; font-size:12px; color:white!important;">搜尋附近餐廳</a>
+      </div>
+    </nav>
+
+<div class="div_alert" id="div_alert">
+<div class="card" style="padding:15px 15px;">
+<h4 style="padding-bottom:5px;">確認兌換優惠</h4>
+
+  <h5 style="padding-bottom:5px;">請確認您已在麥當勞櫃台, 點選[立即兌換]後, 需於兩分鐘內出示給結帳人員</h5>
+  <h5 style="text-align:right;"><a href="#" onclick="javascript:cancel()" style="padding-right:20px;">暫不兌換</a><a href="#" onclick="javascript:confirm()">立即兌換</a></h5>
+</div>
+</div>
+
+
+<div class="div_loading">
+  <div class="card" style="padding:2px 13px;">
+
+    <div class="preloader-wrapper small active">
+      <div class="spinner-layer spinner-green-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    <span class="center" style="padding-left:20%;">
+  載入中 , 請稍等</span>
+</div>
+</div>
+
+<div class="content" id="content" style="overflow:hidden;">
+<img src="./img/photo.jpg" alt="" height="100%;">
+</div>
+
+    <footer id="footer1">
+
+<a href="#" class="a4 waves-effect" onclick="javascript:go()">兌換優惠</a>
+        </footer>
+  </body>
+</html>
